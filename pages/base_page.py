@@ -1,5 +1,5 @@
 from playwright.sync_api import Page
-
+import allure
 
 class BasePage:
     url = None
@@ -8,7 +8,8 @@ class BasePage:
 
     def open_page(self):
         if self.url:
-            self.page.goto(self.url, wait_until='domcontentloaded')
+            with allure.step(f'Открыть страницу {self.url}'):
+                self.page.goto(self.url, wait_until='domcontentloaded')
         else:
             print('Not possible to open page without url')
 

@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 
 
 # Параметризуем фикстуру для использования всех браузеров
-@pytest.fixture(params=["chromium"]) #, "firefox", "webkit"
+@pytest.fixture(params=["chromium", "firefox", "webkit"]) #, "firefox", "webkit"
 def browser(request):
     with sync_playwright() as p:
         browser = p[request.param].launch()
