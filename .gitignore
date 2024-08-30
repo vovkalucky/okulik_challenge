@@ -1,4 +1,11 @@
 # Byte-compiled / optimized / DLL files
 .venv
+.idea
+__pycache__
+.pytest_cache
+pages/main_page.py
 pages/samsung_page.py
 tests/main_test.py
+allure-report/
+allure-results/
+
